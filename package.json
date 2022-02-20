@@ -1,0 +1,23 @@
+{
+  "name": "node_fizz_buzz",
+  "version": "1.0.0",
+  "description": "Fizz Buzz Kata in Node JS",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/scoobycoder/nodeFizzBuzz.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/scoobycoder/nodeFizzBuzz/issues"
+  },
+  "homepage": "https://github.com/scoobycoder/nodeFizzBuzz#readme",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.0.2"
+  }
+}
