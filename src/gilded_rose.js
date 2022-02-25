@@ -51,10 +51,12 @@ function update_quality() {
     if (items[i].name != 'Sulfuras, Hand of Ragnaros') {
       items[i].sell_in = items[i].sell_in - 1;
     }
+    // Once Sell-in value is less than 0, then value degrades twice as fast
     if (items[i].sell_in < 0) {
       // Cheese doesn't go bad
       if (items[i].name != 'Aged Brie') {
         if (items[i].name != 'Backstage passes to a TAFKAL80ETC concert') {
+          // Quality can never be negative
           if (items[i].quality > 0) {
             // Cannot remove Sulfuras
             if (items[i].name != 'Sulfuras, Hand of Ragnaros') {
