@@ -66,6 +66,7 @@ function update_quality() {
             }
           }
         } else {
+          // Once Sell in date expires, quality should go to zero
           items[i].quality = items[i].quality - items[i].quality
         }
       } else {
