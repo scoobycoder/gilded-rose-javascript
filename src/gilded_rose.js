@@ -18,6 +18,7 @@ function update_quality() {
   // Main Loop for updating quantity
   for (var i = 0; i < items.length; i++) {
     //Cheese should never go bad
+    //Don't decrease value of concert tickets yet
     if (items[i].name != 'Aged Brie' && items[i].name != 'Backstage passes to a TAFKAL80ETC concert') {
       // Can never go negative
       if (items[i].quality > 0) {
@@ -30,16 +31,17 @@ function update_quality() {
       // Everything but cheese can be reduced
       if (items[i].quality < 50) {
         items[i].quality = items[i].quality + 1
+        //Concert ticket logic
         if (items[i].name == 'Backstage passes to a TAFKAL80ETC concert') {
-          // Items
+          // Quality of Concert Tickets go up as time decreases at first
           if (items[i].sell_in < 11) {
-            // Add items up to 50 items
+            // Quality of items can't go over 50
             if (items[i].quality < 50) {
               items[i].quality = items[i].quality + 1
             }
           }
           if (items[i].sell_in < 6) {
-            // Add itmes up to 50 items
+            // Quality of items can't go over 50
             if (items[i].quality < 50) {
               items[i].quality = items[i].quality + 1
             }
@@ -58,7 +60,7 @@ function update_quality() {
         if (items[i].name != 'Backstage passes to a TAFKAL80ETC concert') {
           // Quality can never be negative
           if (items[i].quality > 0) {
-            // Cannot remove Sulfuras
+            // Sulfuras never reduces in quality, so never reduce quantity
             if (items[i].name != 'Sulfuras, Hand of Ragnaros') {
               items[i].quality = items[i].quality - 1
             }
